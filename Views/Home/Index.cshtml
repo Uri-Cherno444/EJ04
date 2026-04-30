@@ -1,41 +1,37 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<section>
+﻿<section>
     <div>
         <form action='@Url.Action("Datos", "Home")' method="post" enctype="multipart/form-data">
-            Nombre Completo: <input type="text" name="nombre">
-            Edad: <input type="number" name="edad">
-            DNI: <input type="number" name="dni">
+            Nombre Completo: <input type="text" name="nombre"><br>
+            Edad: <input type="number" name="edad"><br>
+            DNI: <input type="number" name="dni"><br>
             ¿Actualmente trabaja?: 
             <input type="radio" name="trabajo" value="Si">Si
-            <input type="radio" name="trabajo" value="No">No
+            <input type="radio" name="trabajo" value="No">No<br>
             Tipo de empleo: 
             <select name="tipoTrabajo">
                 <option value="1">Relación de dependencia</option>
                 <option value="2">Monotributista</option>
                 <option value="3">Autonomo</option>
                 <option value="4">Desempleado</option>
-            </select>
+            </select><br>
 
-            Ingreso mensual: <input type="number" name="ingreso">
+            Ingreso mensual: <input type="number" name="ingreso"><br>
             ¿Posee otras deudas?: 
             <input type="radio" name="deudas" value="Si">Si
-            <input type="radio" name="deudas" value="No">No
+            <input type="radio" name="deudas" value="No">No<br>
 
-           monto solicitado: <input type="number" name= "monto">
-           plazo:  <select name="plazo">
-           <option value ="1">6 meses </option>
-           <option value ="2"> 12 meses </option>
-           <option value ="3">24 meses </option>
+           Monto solicitado: <input type="number" name= "monto"><br>
+           Plazo:  <select name="plazo">
+           <option value ="1">6 meses</option>
+           <option value ="2">12 meses</option>
+           <option value ="3">24 meses</option>
+           </select><br>
            
 
-        ¿Acepta los términos y concidiciones?:
-        <input type= "checkbox" name = "terminos" value="Si"> Si
-        <input type= "checkbox" name = "terminos" value="No"> No
+            ¿Acepta los términos y concidiciones?:<input type= "checkbox" name = "terminos" value="true"><br>
+
+            <button type="sumbit">Enviar</button>
         </form>
     </div>
 
 </section>
-

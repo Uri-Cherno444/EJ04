@@ -18,22 +18,18 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    [HttpPost]
+    public ActionResult Datos(int edad, string trabajo, int ingreso, int monto, string deudas, bool terminos)
     {
-        return View();
-    }
-
-    public ActionResult Datos(string nombre, int edad, int dni)
-    {
-        ViewBag.nombre = nombre;
-        ViewBag.edad = edad;
-        ViewBag.dni = dni;
-    }
-
-    public ActionResult Trabajo(int trabajo, int tipoTrabajo)
-    {
-        ViewBag.trabajo = trabajo;
-        ViewBag.tipoTrabajo = tipoTrabajo;
+        int montoPermitido = ingreso * 5;
+        if(edad >= 18 && trabajo != "No" && ingreso >= 250000 && monto <= montoPermitido && deudas == "No" && terminos == true)
+        {   
+            return View("Permitido");
+        }
+        else
+        {
+            return View("NoPermitido");            
+        }
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
